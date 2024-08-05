@@ -1,0 +1,216 @@
+body {
+
+}
+
+.navCon{
+    background-color: black;
+    width: 100%;
+    margin: 3rem 0;
+}
+
+.navbar{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+}
+
+.navbar > *{
+
+}
+
+.wrapper{
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    "main leftSide rightSide"
+    "footer footer footer";
+    grid-template-columns: 1fr 20% 20%;
+    grid-template-rows: 200px 1fr 200px;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    height: 100vh;
+    margin: 0;
+}
+
+.jumbotron{
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    max-height: 200px;
+    margin: 20px auto;
+    background-color: lightsalmon;
+    text-align: center;
+    max-width: 100%;
+}
+
+.jumbotron h2{
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.jumbotron h3{
+    font-size: 1.5em;
+    margin: 0;
+}
+.menuItems{
+    font-size: 1.5em;
+    display: grid;
+    grid-template-columns: repeat(4, auto) 1fr;
+    grid-gap: 12px;
+    align-self: center;
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover{
+    color: red;
+}
+
+.menuBar, .navTog{
+    display: none;
+    color: white;
+}
+
+.menuBar{
+    padding: 10px;
+    color: white;
+    font-size: 3em;
+}
+.logo{
+    padding: 1rem;
+    font-size: 3em;
+}
+
+.card {
+    background-color: white;
+    padding: 5px;
+    margin: auto;
+    text-align: center;
+}
+
+.card img{
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.card .content{
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 5px;
+    display: block;
+}
+
+.btn{
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.blue{
+    background-color: mediumblue;
+}
+
+.green{
+    background-color: mediumspringgreen;
+}
+
+.red{
+    background-color: mediumvioletred;
+}
+
+.btn:hover{
+    opacity: .7;
+    cursor: pointer;
+}
+
+#mainHeader{
+    grid-area: header;
+    height: auto;
+    overflow: hidden;
+}
+
+#leftSide{
+    grid-area: leftSide;
+}
+
+#leftSide h2{
+    text-align: center;
+}
+
+#mainContent{
+    grid-area: main;
+}
+
+#mainContent p::first-letter{
+    font-size: 2em;
+    color: red;
+}
+
+#rightSide{
+    grid-area: rightSide;
+}
+
+#mainFooter{
+    grid-area: footer;
+    text-align: center;
+    padding: 20px;
+    color: #ddd;
+    background-color: black;
+}
+
+.wrapper > *{
+    border: 1px solid black;
+    background-color: #eee;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+@media only screen and (max-width: 800px){
+    body{
+        background-color: antiquewhite;
+    }
+
+    .menuBar{
+        display: inline-block;
+        align-self: center;
+        margin-left: 10px;
+    }
+
+    .wrapper {
+        grid-template-areas:
+            "header"
+            "main"
+            "leftSide" 
+            "rightSide"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: 200px 1fr 1fr 1fr 100px;
+    }
+
+    .navTog:checked ~ .menuItems{
+        display: grid;
+        grid-row-start: 2;
+        grid-auto-flow: row;
+        grid-template-columns: auto;
+    }
+
+    .menuItems{
+        display: none;
+        padding-right: 0 !important;
+    }
+    .menuItems{
+        font-size: 1.6em;
+    }
+
+    .card .content{
+        margin: 20px 0;
+        font-size: 1.2em;
+    }
+}
